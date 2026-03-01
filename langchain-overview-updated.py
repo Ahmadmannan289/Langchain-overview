@@ -47,7 +47,7 @@ prompt = ChatPromptTemplate.from_template(
 
 parser = StrOutputParser()
 
-chain = prompt | llm | parser
+chain = prompt | llm | parser ### works as input of llm comes from prompt and output of llm enters into parser
 
 result = chain.invoke({"concept": "autoencoders"})
 print("\n--- LCEL Chain Output ---")
@@ -145,5 +145,6 @@ agent_executor = AgentExecutor(
 
 print("\n--- Agent Execution ---")
 agent_executor.invoke({"input": "Solve 2*x^2 + 3*x - 2"})
+
 
 print("\nExecution complete.")
